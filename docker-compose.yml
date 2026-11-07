@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Docker/backend.Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./facemask.db:/app/facemask.db
+    restart: unless-stopped
+    environment:
+      - PORT=8000
+    networks:
+      - facemask-net
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Docker/frontend.Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - facemask-net
+
+networks:
+  facemask-net:
+    driver: bridge

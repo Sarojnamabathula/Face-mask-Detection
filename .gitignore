@@ -1,0 +1,36 @@
+# Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Database & SQLite files
+*.db
+*.sqlite3
+
+# Model checkpoint weights (optional to ignore or keep)
+# models/*.pth
+
+# Dataset archives and temporary extractions
+dataset/*.zip
+dataset/extracted_*/
+dataset/*_temp*
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
